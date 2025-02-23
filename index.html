@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <button id="pasword" onclick="addEmojiOrText()">
+        додаєм параграф
+    </button>
+    <p id="text">
+
+    </p>
+    <button onclick="changeColor()"> 
+        оновленя
+    </button>
+    <button onclick="changeBackgroundColor()">
+        cbfjdk
+    </button>
+    <script> 
+    // Отримуємо елементи
+const textParagraph = document.getElementById("text");
+const addButton = document.getElementById("addButton");
+// Функція для додавання емодзі або жирного тексту
+function addEmojiOrText() {
+    const emojis = ["😊", "🚀", "🔥", "💡", "🎉", "❤️"];
+    const texts = ["<b>Ти супер!</b>", "<b>Програмування – це круто!</b>", "<b>Так тримати!</b>"];
+    // Випадково вибираємо емодзі або текст
+    let randomChoice ="";
+    if ( Math.random() > 0.5) {
+        randomChoice = emojis[Math.floor(Math.random() * emojis.length) ];
+    } else {
+        randomChoice = texts[Math.floor(Math.random() * texts.length)];  
+    }  
+        
+    // Додаємо до параграфа
+    textParagraph.innerHTML += " " + randomChoice;
+} 
+
+// Функція для генерації випадкового кольору
+function getRandomColor() {
+    const colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12", "#9B59B6", "#E74C3C"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+// Функція зміни фону
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = getRandomColor();
+}
+
+
+function changeColor() {
+
+document.getElementById("pasword").setAttribute("style", "color:blue");
+
+}
+
+
+    </script>
+</body>
+</html>
